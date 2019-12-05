@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 import Home from '../components/Home/Home';
 import Register from '../components/Navbar/Signup/Register'
 import Login from '../components/Navbar/Login/Login';
+import Movies from '../containers/MoviesContainer/MoviesContainer'
 
 
 export default ({currentUser, setCurrentUser}) => (
@@ -14,5 +15,6 @@ export default ({currentUser, setCurrentUser}) => (
         <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
       )}
     />
+    <Route path="/movies" component={Movies} /> 
   </Switch>
 )

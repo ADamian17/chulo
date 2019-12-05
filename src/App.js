@@ -10,8 +10,25 @@ import './App.css';
 class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
+    moviesData: [],
+    userData: []
   }
 
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async () => {
+    const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
+    const userData = await axios.get(`${process.env.REACT_APP_API_URL}/users`, { withCredentials: true });
+
+    this.setState({
+      moviesData: movieData.data.data,
+      userData: userData.data.data
+    })
+  }
+
+  
   setCurrentUser = (userId) => {
     this.setState({ 
       currentUser: userId
@@ -23,7 +40,6 @@ class App extends Component {
     localStorage.removeItem('uid');
     axios.delete(`${process.env.REACT_APP_API_URL}/auth/logout`, { withCredentials: true })
       .then(res => {
-        console.log(res);
         this.setState({ currentUser: null });
         localStorage.removeItem('uid');
         this.props.history.push('/login');
@@ -35,7 +51,7 @@ class App extends Component {
     return (
       <>
         <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} moviesData={this.state.moviesData} userData={this.state.userData} />
       </>
     );
   }
