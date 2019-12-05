@@ -11,15 +11,22 @@ class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
     moviesData: [],
-    userData: []
+    userData: [],
   }
 
   componentDidMount() {
     this.fetchData();
   }
 
+  createFilter = (options) => {
+    console.log(options)
+    return options.map(genre => {
+      return `&genre=${genre}`
+    }).join()
+  }
+
   fetchData = async () => {
-    const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
+    const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['Action','Crime'])}`, { withCredentials: true });
     const userData = await axios.get(`${process.env.REACT_APP_API_URL}/users`, { withCredentials: true });
 
     this.setState({
