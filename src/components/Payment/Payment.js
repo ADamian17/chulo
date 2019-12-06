@@ -1,30 +1,31 @@
-import react from 'react';
+import React from 'react';
 
-const Payment = () => {
-  
-  return(
+import PaymentForm from '../../components/Payment/PaymentForm/PaymentForm'
+
+
+const Payment = props => {
+
+  return (
     <>
-      <form className="needs-validation" novalidate="">
-       <div className="row">
-          <div className="col-md-6 mb-3">
-            <label htmlFor="cc-name">Name on card</label>
-            <input type="text" className="form-control" id="cc-name" placeholder="" required="" >
-            <small className="text-muted">Full name as displayed on card</small>
-            <div className="invalid-feedback">
-              Name on card is required
-            </div>
-          </div>
-          {/* <div className="col-md-6 mb-3">
-            <label htmlFor="cc-number">Credit card number</label>
-            <input type="text" className="form-control" id="cc-number" placeholder="..." required=",..." />
-            <div className="invalid-feedback">
-              Credit card number is required
-            </div>
-          </div> */}
+     <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">Payment Info</h5>
+          <strong className="card-text">...highlighted</strong>
+          <p className="card-text">...</p>
+          <button type="button" className="btn btn-link">add</button>
+          <button type="button" className="btn btn-link">edit</button>
+          <button type="button" className="btn btn-link">delete</button>
         </div>
-      </form>
+      </div>
+      <PaymentForm currentUser={props.currentUser} />
     </>
   )
 }
 
+
 export default Payment;
+
+
+
+
+

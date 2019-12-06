@@ -41,8 +41,7 @@ const Navbar = props => {
                       Menu
                     </NavLink>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <NavLink className="dropdown-item" to="/profile">Profile</NavLink>
-                      <NavLink className="dropdown-item" to="/payment">Add Payment</NavLink>
+                      <NavLink className="dropdown-item" to="/profile">Account</NavLink>
                       <NavLink onClick={props.logout} className="dropdown-item" to="/welcome">Logout</NavLink>
                     </div>
                   </li>

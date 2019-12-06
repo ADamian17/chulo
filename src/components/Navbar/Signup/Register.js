@@ -4,13 +4,14 @@ import {withRouter} from  'react-router-dom';
 
 
 class Register extends Component {
+  
   state = {
-    name: "",
-    email:"",
-    password: "",
-    password2: "",
-    birthday: "",
-    free_plan: false,
+    first_name: '',
+    last_name: '',
+     email: '',
+     password: '',
+     password2: '',
+     birthday: '',
   }
   
   handleChange = event => {
@@ -25,14 +26,13 @@ class Register extends Component {
       withCredentials: true,
     })
     .then((res) => {
-      console.log(res)
       this.setState({
-        name: '',
+       first_name: '',
+       last_name: '',
         email: '',
         password: '',
         password2: '',
         birthday: '',
-        free_plan: true
       });
       this.props.history.push('/login');
     })
@@ -42,12 +42,16 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container">
         <form>
           <div className="form-group">
-            <label htmlFor="name">Full Name</label>
+            <label htmlFor="first_name">First Name</label>
             <input  onChange={this.handleChange} className="form-control form-control-lg"
-              type="text" id="name" name="name" value={this.state.name} required />
+              type="text" id="first_name" name="first_name" value={this.state.first_name} required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="last_name">Last Name</label>
+            <input  onChange={this.handleChange} className="form-control form-control-lg"
+              type="text" id="last_name" name="last_name" value={this.state.last_name} required />
           </div>
           <div className="form-group">
             <label htmlFor="name">Email</label>
@@ -86,8 +90,7 @@ class Register extends Component {
           <button onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">
             Register
           </button>
-        </form>
-      </div>
+         </form>
     );
   }
 }
