@@ -24,7 +24,7 @@ class  Login extends Component {
     .then((res) => {
       console.log(res)
       this.props.setCurrentUser(res.data.data);
-      this.props.history.push('/home');
+      this.props.history.push('/movies');
     })
     .catch((err) => console.log(err));
   }
@@ -34,7 +34,7 @@ class  Login extends Component {
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-4 offset-md-4">
-            <form>
+            <form className="form-signin">
               <div className="form-group">
                 <label htmlFor="name">email</label>
                 <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="email" name="email" />

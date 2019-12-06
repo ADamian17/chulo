@@ -25,10 +25,10 @@ const Navbar = props => {
               </> : 
                 <>
                   <li className="nav-item">
-                    <NavLink className="nav-link" exact to="/">Home</NavLink>
+                    <NavLink className="nav-link" exact to="/movies">Home</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/">Profile</NavLink>
+                    <NavLink className="nav-link" to="/profile">Profile</NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink onClick={props.logout} className="nav-link" to="/welcome">Logout</NavLink>

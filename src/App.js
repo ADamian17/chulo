@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
   }
-
+  
   setCurrentUser = (userId) => {
     this.setState({ 
       currentUser: userId
@@ -23,7 +23,6 @@ class App extends Component {
     localStorage.removeItem('uid');
     axios.delete(`${process.env.REACT_APP_API_URL}/auth/logout`, { withCredentials: true })
       .then(res => {
-        console.log(res);
         this.setState({ currentUser: null });
         localStorage.removeItem('uid');
         this.props.history.push('/login');
@@ -36,6 +35,12 @@ class App extends Component {
       <>
         <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
         <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        {/* <footer className="text-muted">
+          <div className="container">
+            <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+            <p>New to Bootstrap?</p>
+          </div>
+        </footer> */}
       </>
     );
   }
