@@ -10,7 +10,6 @@ import './App.css';
 class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
-    moviesData: [],
     userData: [],
   }
 
@@ -18,20 +17,13 @@ class App extends Component {
     this.fetchData();
   }
 
-  createFilter = (options) => {
-    console.log(options)
-    return options.map(genre => {
-      return `&genre=${genre}`
-    }).join()
-  }
+  
 
   fetchData = async () => {
-    const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['Action','Crime'])}`, { withCredentials: true });
     const userData = await axios.get(`${process.env.REACT_APP_API_URL}/users`, { withCredentials: true });
 
     this.setState({
-      moviesData: movieData.data.data,
-      userData: userData.data.data
+      userData: userData.data.data,
     })
   }
 
@@ -58,7 +50,13 @@ class App extends Component {
     return (
       <>
         <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} moviesData={this.state.moviesData} userData={this.state.userData} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}  userData={this.state.userData} />
+        <footer className="text-muted">
+          <div className="container">
+            <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+            <p>New to Bootstrap?</p>
+          </div>
+        </footer>
       </>
     );
   }

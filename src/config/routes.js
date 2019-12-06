@@ -8,7 +8,7 @@ import Profile from '../components/Navbar/Profile/Profile';
 import Movies from '../containers/MoviesContainer/MoviesContainer'
 
 
-export default ({currentUser, setCurrentUser, moviesData, userData}) => (
+export default ({currentUser, setCurrentUser, userData}) => (
   <Switch>
     <Route exact path="/welcome" component={Home} />
     <Route path="/signup" component={Register} /> 
@@ -17,10 +17,7 @@ export default ({currentUser, setCurrentUser, moviesData, userData}) => (
       )}
     />
     <Route path="/profile" component={Profile} userData={userData} /> 
-     <Route path="/movies" render={() => (
-        <Movies moviesData={moviesData} />
-      )}
-    />
+     <Route path="/movies" component={Movies} />
   </Switch>
 )
 
