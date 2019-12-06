@@ -23,7 +23,7 @@ class MoviesContainer extends Component {
 
   fetchData = async () => {
     const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
-    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['Action'])}`, { withCredentials: true });
+    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter([''])}`, { withCredentials: true });
     this.setState({
       moviesData: movieData.data.data,
       filteredData: filteredData.data.data 
@@ -34,7 +34,8 @@ class MoviesContainer extends Component {
    
 
   render() {
-   const moviesDetail = this.state.moviesData;
+
+   const movieDetails = this.state.moviesData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
       <section className="jumbotron text-center">
@@ -50,7 +51,7 @@ class MoviesContainer extends Component {
       <div className="container">
 
         <div className="row">
-        <MovieCard moviesDetail={moviesDetail} />
+          {movieDetails}
         </div>
       </div>
     </div>

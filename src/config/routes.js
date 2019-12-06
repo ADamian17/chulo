@@ -10,7 +10,7 @@ import Movies from '../containers/MoviesContainer/MoviesContainer'
 
 export default ({currentUser, setCurrentUser }) => (
   <Switch>
-    <Route exact path="/welcome" component={Home} />
+    <Route exact path="/" component={Home} />
     <Route path="/signup" component={Register} /> 
     <Route path="/login" render={() => (
         <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -20,7 +20,10 @@ export default ({currentUser, setCurrentUser }) => (
         <Profile currentUser={currentUser} setCurrentUser={setCurrentUser} />
       )}
     />
-     <Route path="/movies" component={Movies} />
+    <Route path="/movies" render={() => (
+        <Movies currentUser={currentUser} />
+      )}
+    />
   </Switch>
 )
 

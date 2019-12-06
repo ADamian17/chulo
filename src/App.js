@@ -35,12 +35,6 @@ class App extends Component {
       <>
         <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
         <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
-        {/* <footer className="text-muted">
-          <div className="container">
-            <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-            <p>New to Bootstrap?</p>
-          </div>
-        </footer> */}
       </>
     );
   }

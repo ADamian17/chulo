@@ -8,10 +8,9 @@ const Profile = (props) => {
    const signUpDate = props.profileData.createdAt;
    return (
      <>
-      <h1>Profile</h1>
-        <h2>{name}</h2>
-        <p>{birthDay}</p>
-        <p>{signUpDate}</p>
+      <h2>{name}</h2>
+      <h4>{birthDay}</h4>
+      <strong>{signUpDate}</strong>
      </>
    )
 }
