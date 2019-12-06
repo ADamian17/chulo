@@ -8,25 +8,25 @@ class MoviesContainer extends Component {
 
   state = {
     moviesData: [],
-    // filteredData:[],
+    filteredData:[],
   }
 
   componentDidMount() {
     this.fetchData();
   }
 
-  // createFilter = (options) => {
-  //   return options.map(genre => {
-  //     return `&genre=${genre}`
-  //   }).join()
-  // }
+  createFilter = (options) => {
+    return options.map(genre => {
+      return `&genre=${genre}`
+    }).join()
+  }
 
   fetchData = async () => {
     const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
-    // const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['fantasy'])}`, { withCredentials: true });
+    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter([''])}`, { withCredentials: true });
     this.setState({
       moviesData: movieData.data.data,
-      // filteredData: filteredData.data.data 
+      filteredData: filteredData.data.data 
     })
   }
   
@@ -34,7 +34,8 @@ class MoviesContainer extends Component {
    
 
   render() {
-   const moviesDetail = this.state.moviesData
+
+   const movieDetails = this.state.moviesData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
       <section className="jumbotron text-center">
@@ -50,7 +51,7 @@ class MoviesContainer extends Component {
       <div className="container">
 
         <div className="row">
-        <MovieCard moviesDetail={moviesDetail} />
+          {movieDetails}
         </div>
       </div>
     </div>

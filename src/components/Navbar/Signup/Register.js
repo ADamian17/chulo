@@ -9,7 +9,8 @@ class Register extends Component {
     email:"",
     password: "",
     password2: "",
-    birthday: ""
+    birthday: "",
+    free_plan: false,
   }
   
   handleChange = event => {
@@ -30,7 +31,8 @@ class Register extends Component {
         email: '',
         password: '',
         password2: '',
-        birthday: ''
+        birthday: '',
+        free_plan: true
       });
       this.props.history.push('/login');
     })
