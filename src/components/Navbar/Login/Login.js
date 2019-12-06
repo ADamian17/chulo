@@ -24,7 +24,7 @@ class  Login extends Component {
     .then((res) => {
       console.log(res)
       this.props.setCurrentUser(res.data.data);
-      this.props.history.push('/home');
+      this.props.history.push('/movies');
     })
     .catch((err) => console.log(err));
   }
