@@ -10,23 +10,7 @@ import './App.css';
 class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
-    userData: [],
   }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  
-
-  fetchData = async () => {
-    const userData = await axios.get(`${process.env.REACT_APP_API_URL}/users`, { withCredentials: true });
-
-    this.setState({
-      userData: userData.data.data,
-    })
-  }
-
   
   setCurrentUser = (userId) => {
     this.setState({ 
@@ -50,13 +34,13 @@ class App extends Component {
     return (
       <>
         <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}  userData={this.state.userData} />
-        <footer className="text-muted">
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        {/* <footer className="text-muted">
           <div className="container">
             <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
             <p>New to Bootstrap?</p>
           </div>
-        </footer>
+        </footer> */}
       </>
     );
   }

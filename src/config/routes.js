@@ -16,7 +16,10 @@ export default ({currentUser, setCurrentUser }) => (
         <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
       )}
     />
-    <Route path="/profile" component={Profile} /> 
+    <Route path="/profile" render={() => (
+        <Profile currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      )}
+    />
      <Route path="/movies" component={Movies} />
   </Switch>
 )
