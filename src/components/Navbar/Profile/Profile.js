@@ -4,6 +4,7 @@ import Payment from '../../../components/Payment/Payment';
 
 
 const Profile = (props) => {
+  console.log(props.profileData)
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
    const birthDay = props.profileData.birthday;
    const email = props.profileData.email;

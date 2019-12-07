@@ -24,6 +24,10 @@ export default ({currentUser, setCurrentUser }) => (
         <Movies currentUser={currentUser} />
       )}
     />
+    <Route path="/mymovies" render={() => (
+        <Movies currentUser={currentUser} user/>
+      )}
+    />
   </Switch>
 )
 

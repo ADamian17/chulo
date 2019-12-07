@@ -10,7 +10,7 @@ const Payment = props => {
      <div className="card">
         <div className="card-body">
           <h5 className="card-title">Payment Info</h5>
-          <strong className="card-text">...highlighted</strong>
+          <strong className="card-text">Card in File</strong>
           <p className="card-text">...</p>
           <button type="button" className="btn btn-link">add</button>
           <button type="button" className="btn btn-link">edit</button>
