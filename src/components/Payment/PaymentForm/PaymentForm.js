@@ -30,7 +30,7 @@ class PaymentForm extends Component {
         first_name: '',
         last_name: '',
         card_num: '',
-        exp_day: '',
+        exp_year: '',
         exp_month: '',
         code: '',
       });
@@ -54,22 +54,22 @@ class PaymentForm extends Component {
               type="text" id="last_name" name="last_name" value={this.state.last_name} required />
           </div>
           <div className="form-group">
-            <label htmlFor="name">card_num</label>
+            <label htmlFor="card_num">card_num</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="email"
               name="card_num" value={this.state.card_num} required />
           </div>
           <div className="form-group">
-            <label htmlFor="birthday">exp_day</label>
-            <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="text"
-              name="exp_day" value={this.state.exp_day} required />
+            <label htmlFor="exp_year">Exp Year</label>
+            <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="exp_year"
+              name="exp_year" value={this.state.exp_year} required />
           </div>
           <div className="form-group">
-            <label htmlFor="name">exp_month</label>
+            <label htmlFor="name">exp Month</label>
             <input onChange={this.handleChange} className="form-control form-control-lg"
               type="text" id="exp_month" name="exp_month" value={this.state.exp_month} required/>
           </div>
           <div className="form-group">
-            <label htmlFor="password">code</label>
+            <label htmlFor="code">code</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="code" name="code" value={this.state.code} required />
           </div>
           <button className="btn btn-primary justify-" type="submit">submit</button>

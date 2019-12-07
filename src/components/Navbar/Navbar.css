@@ -2,3 +2,10 @@
   background-color: transparent !important;
   z-index: 10 !important;
 }
+
+.navbar-brand{
+  color: black !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: black !important;
+}

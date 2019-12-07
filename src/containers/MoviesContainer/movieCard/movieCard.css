@@ -1,0 +1,16 @@
+ .card {
+  background-color: rgb(21, 20, 20) !important;
+}
+
+.card {
+  -webkit-box-shadow: 10px 12px 5px -1px rgba(254, 252, 252, 0.399);
+  -moz-box-shadow: 10px 12px 5px -1px rgba(0,0,0,0.32);
+  box-shadow: 10px 12px 5px -1px rgba(0,0,0,0.32);
+}
+
+.card:hover {
+  transform: scale(1.2) !important;
+  opacity: 1 !important;
+  transition: 0.5 !important;
+  z-index: 1;
+}
