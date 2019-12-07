@@ -19,8 +19,10 @@ class ProfileContainer extends Component{
     
     this.setState({
       userData: userData.data.data,
+      paymentDelete: false 
     })
   }
+
   
   handleUserUpdate = (event, updatedState) => {
     event.preventDefault();
@@ -31,6 +33,21 @@ class ProfileContainer extends Component{
        })
      })
      .catch(err => console.log(err)) 
+  }
+
+
+  handleDeletePayment = ( event ) => {
+    event.preventDefault()
+     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/paymentdelete`, {
+      withCredentials: true,
+    })
+    .then((res) => {
+      this.setState({
+        paymentDelete: true
+      });
+      console.log("payment deleted")
+    })
+    .catch((err) => console.log(err))
   }
   
   handleUserDelete = (event) => {
@@ -49,7 +66,8 @@ class ProfileContainer extends Component{
     return (
       <>
        < Profile profileData={profileData} currentUser={this.props.currentUser} 
-       handleUserUpdate={this.handleUserUpdate} handleUserDelete={this.handleUserDelete } />
+       handleUserUpdate={this.handleUserUpdate} handleUserDelete={this.handleUserDelete } 
+       handleDeletePayment={this.handleDeletePayment} />
       </>
      
      

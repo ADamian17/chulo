@@ -26,7 +26,7 @@ const Profile = (props) => {
         <div className="col-md-10 offset-md-1">
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
-              <Payment profileData={props.profileData} currentUser={props.currentUser} />
+              <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment} />
             </div>
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
