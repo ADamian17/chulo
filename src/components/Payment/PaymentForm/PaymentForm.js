@@ -22,7 +22,7 @@ class PaymentForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, {free_plan: false, payment:{...this.state}}, {
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { payment:{...this.state}}, {
       withCredentials: true,
     })
     .then((res) => {

@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import {withRouter} from  'react-router-dom';
 import axios from 'axios';
 import Profile from '../../components/Navbar/Profile/Profile'
 
@@ -18,12 +19,13 @@ class ProfileContainer extends Component{
     
     this.setState({
       userData: userData.data.data,
+      paymentDelete: false 
     })
   }
+
   
   handleUserUpdate = (event, updatedState) => {
     event.preventDefault();
-    console.log('clicked')
     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`,updatedState, { withCredentials: true })
      .then(res => {
        this.setState({
@@ -33,12 +35,39 @@ class ProfileContainer extends Component{
      .catch(err => console.log(err)) 
   }
 
+
+  handleDeletePayment = ( event ) => {
+    event.preventDefault()
+     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/paymentdelete`, {
+      withCredentials: true,
+    })
+    .then((res) => {
+      this.setState({
+        paymentDelete: true
+      });
+      console.log("payment deleted")
+    })
+    .catch((err) => console.log(err))
+  }
+  
+  handleUserDelete = (event) => {
+    event.preventDefault();
+    console.log('click')
+    axios.delete(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { withCredentials: true })
+     .then(res => {
+      this.props.logout()
+     })
+    .catch(err => console.log(err))
+  }
+
   render () {
     const profileData = this.state.userData
 
     return (
       <>
-       < Profile profileData={profileData} currentUser={this.props.currentUser} handleUserUpdate={this.handleUserUpdate} />
+       < Profile profileData={profileData} currentUser={this.props.currentUser} 
+       handleUserUpdate={this.handleUserUpdate} handleUserDelete={this.handleUserDelete } 
+       handleDeletePayment={this.handleDeletePayment} />
       </>
      
      
@@ -47,4 +76,4 @@ class ProfileContainer extends Component{
 } 
 
 
-export default ProfileContainer;
+export default withRouter(ProfileContainer);

@@ -10,7 +10,7 @@ const Profile = (props) => {
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
    const birthDay = props.profileData.birthday;
    const email = props.profileData.email;
-   const signUpDate = props.profileData.createdAt;
+  //  const signUpDate = props.profileData.createdAt;
    return (
      <div className="row mt-5 p-3">
       <div className="col"> 
@@ -26,7 +26,7 @@ const Profile = (props) => {
         <div className="col-md-10 offset-md-1">
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
-              <Payment profileData={props.profileData} currentUser={props.currentUser} />
+              <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment} />
             </div>
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
@@ -34,8 +34,8 @@ const Profile = (props) => {
                   <h5 className="card-title">{full_name}</h5>
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
-                  <button className="btn btn-link">edit</button>
-                  <a href="/" className="btn btn-link">delete</a>
+                  <button className="btn btn-link">Edit</button>
+                  <a href="/" className="btn btn-link" onClick={props.handleUserDelete}>Cancel Subcription</a>
                 </div>
              </div>
            </div>

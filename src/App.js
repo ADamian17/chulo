@@ -26,7 +26,7 @@ class App extends Component {
       .then(res => {
         this.setState({ currentUser: null });
         localStorage.removeItem('uid');
-        this.props.history.push('/login');
+        this.props.history.push('/');
       })
       .catch(err => console.log(err));
   }
@@ -34,8 +34,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
       </>
     );
   }

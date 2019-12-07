@@ -9,7 +9,7 @@ import Movies from '../containers/MoviesContainer/MoviesContainer';
 import MovieDetail from '../containers/MoviesContainer/MovieDetail/MovieDetail';
 
 
-export default ({currentUser, setCurrentUser }) => (
+export default ({currentUser, setCurrentUser, logout }) => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/signup" component={Register} /> 
@@ -18,7 +18,7 @@ export default ({currentUser, setCurrentUser }) => (
       )}
     />
     <Route path="/profile" render={() => (
-        <Profile currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <Profile currentUser={currentUser} setCurrentUser={setCurrentUser} logout={logout}/>
       )}
     />
     <Route path="/movies" render={() => (
