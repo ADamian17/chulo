@@ -11,6 +11,7 @@ class PaymentForm extends Component {
     exp_day: '',
     exp_month: '',
     code: '',
+
   }
   
   handleChange = event => {
@@ -20,9 +21,8 @@ class PaymentForm extends Component {
   };
 
   handleSubmit = event => {
-    console.log('click')
     event.preventDefault();
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, {payment:{...this.state}}, {
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, {free_plan: false, payment:{...this.state}}, {
       withCredentials: true,
     })
     .then((res) => {
@@ -41,7 +41,7 @@ class PaymentForm extends Component {
 
   render() {
     return (
-      
+      <div className="row">
         <form onSubmit={this.handleSubmit}>
           <div className="col form-group">
             <label htmlFor="first_name">First Name</label>
@@ -66,15 +66,15 @@ class PaymentForm extends Component {
           <div className="form-group">
             <label htmlFor="name">exp_month</label>
             <input onChange={this.handleChange} className="form-control form-control-lg"
-              type="text" id="password" name="exp_month" value={this.state.exp_month} required/>
+              type="text" id="exp_month" name="exp_month" value={this.state.exp_month} required/>
           </div>
           <div className="form-group">
             <label htmlFor="password">code</label>
-            <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password"
-              name="code" value={this.state.code} required />
+            <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="code" name="code" value={this.state.code} required />
           </div>
           <button className="btn btn-primary justify-" type="submit">submit</button>
          </form>
+      </div>   
     );
   }
 }

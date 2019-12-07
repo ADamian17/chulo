@@ -1,10 +1,13 @@
 import React from 'react'
+import './Home.css'
 
+import img1 from '../Home/asset/img1.jpg'
 
 const Home = () => {
   return (
+  <div className="container-fluid">  
     <main role="main">
-      <div id="header-section" className="row justify-content-center align-items-center header-content p-2">
+      <div id="header-section" className="row justify-content-center align-items-center header-content p-2 myHero">
         <div className=" col-12 col-md-6 col-sm-6 col-lg-6">
           <div className="header-item">
             <div className="container">
@@ -20,14 +23,18 @@ const Home = () => {
   
       {/* <!-- Second Section
       ================================================== --> */}
-      <div className="container-fluid">
-        <h1>Photo Section</h1>
-        <hr className="featurette-divider" />
-         <div className="row pb-5 mb-5 mr-2 ml-2">
+         <div className="row">
+          <div className="col grif-itmen d1">
           </div>
-      </div>
+          <div className="col grif-itmen d2">
+          </div>
+          <div className="col grif-itmen d3">
+          </div>
+        </div>
+      
 
       <hr /> 
+     <div className="row"> 
      <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 className="display-4">Pricing</h1>
        <p className="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
@@ -50,7 +57,10 @@ const Home = () => {
         </div>
       </div>
     </div>
+   </div>
+
    </main> 
+  </div> 
   )
 }
 

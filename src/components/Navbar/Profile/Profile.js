@@ -1,15 +1,19 @@
 import React from 'react';
+import UserUpdateForm from '../../../containers/ProfileContainer/UserUpdateForm/UserUpdateForm'
+import { Modal } from 'react-bootstrap'
 
 import Payment from '../../../components/Payment/Payment';
 
 
 const Profile = (props) => {
+  console.log(props.profileData)
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
    const birthDay = props.profileData.birthday;
    const email = props.profileData.email;
    const signUpDate = props.profileData.createdAt;
    return (
-     <>
+     <div className="row mt-5 p-3">
+      <div className="col"> 
       <ul className="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
         <li className="nav-item">
           <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
@@ -30,16 +34,17 @@ const Profile = (props) => {
                   <h5 className="card-title">{full_name}</h5>
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
-                  <p className="card-text">{signUpDate}</p>
-                  <a href="/" className="btn btn-link">edit</a>
+                  <button className="btn btn-link">edit</button>
                   <a href="/" className="btn btn-link">delete</a>
                 </div>
              </div>
            </div>
+           <UserUpdateForm handleUserUpdate={props.handleUserUpdate}/>
           </div>
         </div>
       </div>
-     </>
+     </div>
+    </div> 
    )
 }
 

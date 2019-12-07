@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import './Navbar.css'
+
 const Navbar = props => {
   return (
     <header>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
         <div className="container">
           {!props.currentUser ?
            <>
@@ -31,7 +33,7 @@ const Navbar = props => {
               </> : 
                 <>
                   <li className="nav-item">
-                    <NavLink className="nav-link" exact to="/my_movies">myMovies</NavLink>
+                    <NavLink className="nav-link" exact to="/mymovies">myMovies</NavLink>
                   </li>
                   <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />

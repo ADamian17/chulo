@@ -9,6 +9,7 @@ class MoviesContainer extends Component {
   state = {
     moviesData: [],
     filteredData:[],
+    userMovies:[],
   }
 
   componentDidMount() {
@@ -22,20 +23,29 @@ class MoviesContainer extends Component {
   }
 
   fetchData = async () => {
-    const movieData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
+    // Dalton helped
+    const userMovies = await axios.get(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { withCredentials: true }); 
+  
+    
+    const moviesData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
+   
     const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter([''])}`, { withCredentials: true });
+
+
     this.setState({
-      moviesData: movieData.data.data,
-      filteredData: filteredData.data.data 
+      moviesData: moviesData.data.data,
+      userMovies: userMovies.data.data.my_movies, 
+      filteredData: filteredData.data.data,
+      loaded: true 
     })
   }
   
-
-   
+  
 
   render() {
-
+   console.log(this.state.moviesData) 
    const movieDetails = this.state.moviesData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
+   const userDetails = this.state.userMovies.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
       <section className="jumbotron text-center">
@@ -51,7 +61,8 @@ class MoviesContainer extends Component {
       <div className="container">
 
         <div className="row">
-          {movieDetails}
+          {!this.props.user && movieDetails}
+          {this.props.user && userDetails}
         </div>
       </div>
     </div>

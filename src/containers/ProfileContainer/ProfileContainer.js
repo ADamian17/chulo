@@ -21,14 +21,24 @@ class ProfileContainer extends Component{
     })
   }
   
-// const updateUser = await axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { withCredentials: true });
+  handleUserUpdate = (event, updatedState) => {
+    event.preventDefault();
+    console.log('clicked')
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`,updatedState, { withCredentials: true })
+     .then(res => {
+       this.setState({
+          userData: updatedState
+       })
+     })
+     .catch(err => console.log(err)) 
+  }
 
   render () {
     const profileData = this.state.userData
 
     return (
       <>
-       < Profile profileData={profileData} currentUser={this.props.currentUser}/>
+       < Profile profileData={profileData} currentUser={this.props.currentUser} handleUserUpdate={this.handleUserUpdate} />
       </>
      
      
