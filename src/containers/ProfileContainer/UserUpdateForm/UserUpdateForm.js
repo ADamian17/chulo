@@ -29,7 +29,7 @@ class UserUpdateForm extends React.Component {
             <label htmlFor="currentCity">Email</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="email" name="email" value={this.state.email} />
           </div>
-          <button data-dismiss="modal" onClick={(event) => this.props.handleUserUpdate(event, this.state)} type="submit" className="btn btn-success float-right">save</button> 
+          <button data-dismiss="modal" onClick={(event) => this.props.handleUserUpdate(event, this.state)} type="submit" className="btn btn-primary float-right">save</button> 
         </form>
       </div>
     )
