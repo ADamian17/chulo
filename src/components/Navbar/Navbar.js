@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import './Navbar.css'
+
 const Navbar = props => {
   return (
     <header>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
         <div className="container">
           {!props.currentUser ?
            <>
