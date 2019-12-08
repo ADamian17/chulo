@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.css'
 
 import img1 from '../Home/asset/img1.jpg'
+import img2 from '../Home/asset/attactOftheClones.jpeg'
 
 const Home = () => {
   return (
@@ -10,11 +11,11 @@ const Home = () => {
       <div id="header-section" className="row justify-content-center align-items-center header-content p-2 myHero">
         <div className=" col-12 col-md-6 col-sm-6 col-lg-6">
           <div className="header-item">
-            <div className="container">
-              <div className="header-caption text-center">
+            <div className="container header-caption">
+              <div className=" text-center">
                 <h1>Come home and relax</h1>
                 <p>Watch thousands of shows and movies, with plans starting at $2.99/month.</p>
-                <p><a className="btn btn-lg btn-outline-primary"  href="/signup" role="button">Signup</a></p>
+                <p><a className="btn btn-lg btn-dark"  href="/signup" role="button">Signup</a></p>
               </div>
             </div>
           </div>
@@ -23,14 +24,22 @@ const Home = () => {
   
       {/* <!-- Second Section
       ================================================== --> */}
-         <div className="row">
-          <div className="col grif-itmen d1">
-          </div>
-          <div className="col grif-itmen d2">
-          </div>
-          <div className="col grif-itmen d3">
-          </div>
-        </div>
+      <div className="row photoSection mt-5">
+        <div className="col-sm-8"><img src={img1} alt="img" className="img-fluid imgSction" height="100"/></div>
+        <div className="col-sm sectionItem"><img src="http://www.gstatic.com/tv/thumb/v22vodart/35903/p35903_v_v8_bb.jpg" alt="img" className="img-fluid imgSction" /></div>
+      </div>
+      <div className="row photoSection2">
+        <div className="col-sm sectionItem">col-sm</div>
+        {/* <div className="col-sm sectionItem">col-sm</div>
+        <div className="col-sm sectionItem">col-sm</div> */}
+      </div>
+      <div className="row photoSection3 mt-5">
+        <div className="col-sm-8">col-sm-4</div>
+        <div className="col-sm-4">col-sm-8</div>
+      </div>
+
+      
+         
       
 
       <hr /> 
@@ -52,7 +61,7 @@ const Home = () => {
               <li>2 Screens included</li>
               <li>Adds are included in the free trial</li>
             </ul>
-            <button type="button" className="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+            <button type="button" className="btn btn-lg btn-block btn-outline-dark"  href="/signup">Sign up for free</button>
           </div>
         </div>
       </div>

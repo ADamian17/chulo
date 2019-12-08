@@ -1,6 +1,8 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
 
+import './MovieContainer.css'
+
 import MovieCard from '../MoviesContainer/movieCard/movieCard' 
 
 
@@ -57,7 +59,7 @@ class MoviesContainer extends Component {
       </div>
     </section>
 
-    <div className="album py-5 ">
+    <div className="album py-5 movieHome">
       <div className="container">
 
         <div className="row">
