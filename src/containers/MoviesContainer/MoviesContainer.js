@@ -1,6 +1,8 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
 
+import './MovieContainer.css'
+
 import MovieCard from '../MoviesContainer/movieCard/movieCard' 
 
 
@@ -29,7 +31,7 @@ class MoviesContainer extends Component {
     
     const moviesData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
    
-    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter([''])}`, { withCredentials: true });
+    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['fantasy, action'])}`, { withCredentials: true });
 
 
     this.setState({
@@ -48,16 +50,16 @@ class MoviesContainer extends Component {
    const userDetails = this.state.userMovies.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
-      <section className="jumbotron text-center">
+      <section className="jumbotron text-center mb-0 ">
       <div className="container">
-        <h1>The best Movies</h1>
-        <p className="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <h1>A Movie for Everyone</h1>
+        <p className="lead text-muted">The widest variety of movies, anywhere!</p>
         <p>
         </p>
       </div>
     </section>
 
-    <div className="album py-5 bg-light">
+    <div className="album py-5 movieHome">
       <div className="container">
 
         <div className="row">

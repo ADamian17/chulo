@@ -24,9 +24,9 @@ const Navbar = props => {
 
               {!props.currentUser ? 
               <>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink className="nav-link" to='/signup'>Signup</NavLink>
-                </li>
+                </li> */}
                 <li>
                 <NavLink className="nav-link" to="/login">Login</NavLink>
                 </li>
@@ -35,16 +35,16 @@ const Navbar = props => {
                   <li className="nav-item">
                     <NavLink className="nav-link" exact to="/mymovies">myMovies</NavLink>
                   </li>
-                  <form className="form-inline my-2 my-lg-0">
+                  {/* <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                  </form>
+                  </form> */}
                   <li className="nav-item dropdown">
                     <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Menu
                     </NavLink>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <NavLink className="dropdown-item" to="/profile">Account</NavLink>
-                      <NavLink onClick={props.logout} className="dropdown-item" to="/welcome">Logout</NavLink>
+                      <NavLink onClick={props.logout} className="dropdown-item" to="/">Logout</NavLink>
                     </div>
                   </li>
                 </> }
