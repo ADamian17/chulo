@@ -5,15 +5,38 @@
 
 
 .movieCard:hover {
-  transform: scale(1.2) !important;
+  transform: scale(1.1) ;
   opacity: 1 !important;
-  /* transition: 0.5s !important; */
+  transition: 0.5s ease-out;
   z-index: 1;
+  -webkit-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+  -moz-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+  box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
 }
 
-.card {
-  min-height: 100px !important;
+/* .movieCard::before {
+  content: "wfsadfs";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: brown;
+  z-index: 2222;
 }
+
+.movieCard::after {
+  content: "csdd";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: brown;
+  z-index: ;
+} */
+
+
 
 /* https://www.w3schools.com/howto/howto_css_flip_card.asp */
 

@@ -1,8 +1,6 @@
 import React from 'react'
 import './Home.css'
 
-import img1 from '../Home/asset/img1.jpg'
-import img2 from '../Home/asset/attactOftheClones.jpeg'
 
 const Home = () => {
   return (
@@ -29,7 +27,7 @@ const Home = () => {
         </div>
       </div>
       <div className="row photoSection">
-        <div className="col-sm-8"><img src={img1} alt="img" className="img-fluid imgSction" height="100"/></div>
+        <div className="col-sm-8"><img src="https://i.gifer.com/PANl.gif" alt="img" className="img-fluid imgSction" height="100"/></div>
         <div className="col-sm sectionItem">
           <img src="http://www.gstatic.com/tv/thumb/v22vodart/35903/p35903_v_v8_bb.jpg" alt="img" className="img-fluid imgSction" />
           </div>
@@ -86,9 +84,9 @@ const Home = () => {
     </div>
    </div>
    </main> 
-   <footer class="blog-footer text-center mb-2 p-2">
+   <footer className="blog-footer text-center mb-2 p-2">
       <p>
-        <a href="#">Back to top</a>
+        <a href="#header-section">Back to top</a>
       </p>
         <p> <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
    </footer>

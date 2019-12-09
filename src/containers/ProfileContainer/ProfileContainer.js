@@ -5,8 +5,11 @@ import Profile from '../../components/Navbar/Profile/Profile'
 
 
 class ProfileContainer extends Component{
+
   state = {
     userData: [],
+    // paymentAdded: false,
+    paymentDelete: false 
   }
 
   componentDidMount() {
@@ -19,7 +22,7 @@ class ProfileContainer extends Component{
     
     this.setState({
       userData: userData.data.data,
-      paymentDelete: false 
+      
     })
   }
 
@@ -34,6 +37,22 @@ class ProfileContainer extends Component{
      })
      .catch(err => console.log(err)) 
   }
+
+
+  // handleAddPayment = (event, payment ) => {
+  //   event.preventDefault();
+  //   axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, payment, { payment:{...this.state}}, {
+  //     withCredentials: true,
+  //   })
+  //   .then((res) => {
+  //     this.setState({
+  //      paymentAdded: true
+  //     });
+  //     console.log('payment added')
+  //   })
+  //   .catch((err) => console.log(err))
+  // };
+
 
 
   handleDeletePayment = ( event ) => {

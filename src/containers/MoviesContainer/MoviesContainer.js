@@ -52,8 +52,8 @@ class MoviesContainer extends Component {
       <>
       <section className="jumbotron text-center mb-0 ">
       <div className="container">
-        <h1>The best Movies</h1>
-        <p className="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <h1>A Movie for Everyone</h1>
+        <p className="lead text-muted">The widest variety of movies, anywhere!</p>
         <p>
         </p>
       </div>
