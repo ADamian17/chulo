@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { withRouter} from 'react-router-dom';
+import { withRouter, Link} from 'react-router-dom';
 import axios from 'axios';
 
-// import MovieDetail from '../MovieDetail/MovieDetail'
+import MovieDetail from '../MovieDetail/MovieDetail'
 
 import './movieCard.css'
 class MovieCard extends Component {
@@ -11,6 +11,7 @@ class MovieCard extends Component {
      movieId: "",
      addedMovie: false, 
      movieDetails: {},
+     selectedMovie: ''
    }
 
   //  Add movie
@@ -31,14 +32,16 @@ class MovieCard extends Component {
     axios.get(`${process.env.REACT_APP_API_URL}/movies/${this.props.movie._id}`, { withCredentials: true })
     .then(res => {
       this.setState({
-        movieDetails: res.data.data
+        movieDetails: res.data.data,
+        selectedMovie: res.data.data._id
       })
+      console.log(res)
     })
     .catch(err => console.log(`${err} para detalles no detalles`))
   }
    
   render () {
-    
+      
     return (
       <>
       <div className="col-md-4">
@@ -49,14 +52,29 @@ class MovieCard extends Component {
             {/* <p className="card-text">{this.props.movie.description}</p> */}
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
-            <button type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleClick} >Add</button>
-            <button type="button" className="btn rounded-circle btn-sm btn-outline-secondary" data-toggle="modal" data-target=".bd-example-modal-xl">Details</button>
+            <button type="button" className="btn rounded-circle btn-sm btn-outline-secondary"  onClick={this.handleClick} >Add</button>
+            <button to="/moviedetail" type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target=".bd-example-modal-xlPro">Details</button>
           </div>
           </div>
          </div>
-        <div className="flip-card-inner"></div>
        </div>
      </div>
+
+
+     {/* <!-- Button trigger modal --> */}
+      {/* <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterPro">
+        Launch demo modal
+      </button> */}
+
+      {/* <!-- Modal --> */}
+
+        <div className="modal fade bd-example-modal-xlPro" tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div className="modal-dialog modal-xl" role="document">
+            <div className="modal-content">
+            < MovieDetail  movieDetail={this.state.movieDetails}/>
+            </div>
+          </div>
+        </div>
     </>
     )
   }

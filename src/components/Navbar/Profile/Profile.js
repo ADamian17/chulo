@@ -3,7 +3,7 @@ import React from 'react';
 
 import UserUpdateForm from '../../../containers/ProfileContainer/UserUpdateForm/UserUpdateForm';
 import Payment from '../../../components/Payment/Payment';
-
+import PaymentForm from  '../../Payment/PaymentForm/PaymentForm'
 
 const Profile = (props) => {
   console.log(props.profileData)
@@ -26,7 +26,7 @@ const Profile = (props) => {
         <div className="col-md-10 offset-md-1">
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
-              <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment}/>
+              <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment} handleAddPayment={props.handleAddPayment}/>
             </div>
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
@@ -35,11 +35,14 @@ const Profile = (props) => {
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
+                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPro">Add Payment</button>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModal">Cancel Subcription</button>
                 </div>
              </div>
            </div>
            <UserUpdateForm handleUserUpdate={props.handleUserUpdate}/>
+           <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment}/>
+
 
             {/* <!-- Modal --> */}
             <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

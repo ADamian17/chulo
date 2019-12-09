@@ -5,9 +5,13 @@ import PaymentForm from '../../components/Payment/PaymentForm/PaymentForm'
 
 const  Payment = props => {
 
-    const paymentInf = props.profileData.payment
+  if (!props.profileData.payment) {
+    return <h2>Loading...</h2>
+  }
+
+    const paymentInf = props.profileData.payment;
     // const cardNUm = props.profileData.payment.card_num
-    console.log(paymentInf)
+    // console.log(paymentInf.card_num)
     
     return (
       <>
@@ -15,13 +19,13 @@ const  Payment = props => {
           <div className="card-body">
             <h5 className="card-title">Payment Info</h5>
             <strong className="card-text">Card in File</strong>
-            <p></p>
+            <p>{paymentInf.card_num}</p>
             <br />
             <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalLong">Edit</button>
             <button type="button" className="btn btn-link" onClick={props.handleDeletePayment} >delete</button>
           </div>
         </div>
-        <PaymentForm currentUser={props.currentUser}/>
+        <PaymentForm currentUser={props.currentUser} handleAddPayment={props.handleAddPayment}/>
       </>
     )
 } 
