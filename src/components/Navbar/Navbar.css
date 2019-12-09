@@ -1,15 +1,15 @@
 .navbar{
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   z-index: 10 !important;
 }
 
 .navbar-brand{
-  color: black !important;
+  color: whitesmoke !important;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: black !important;
+  color: whitesmoke!important;
 }
 
 button .navbar-toggler {
-  border: black !important;
+  border: whitesmoke !important;
 }

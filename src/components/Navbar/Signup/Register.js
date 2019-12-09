@@ -42,17 +42,29 @@ class Register extends Component {
 
   render() {
     return (
+     
+       <div className="row align-itmes-center mt-5 p-5">
+        <div className="col"></div> 
+        <div className="col-9"> 
+        < div className="conatainer">
         <form>
-          <div className="form-group">
-            <label htmlFor="first_name">First Name</label>
-            <input  onChange={this.handleChange} className="form-control form-control-lg"
-              type="text" id="first_name" name="first_name" value={this.state.first_name} required />
+          <h1 className="text-center mb-4">Sign Up</h1>
+          <div className="row">
+            <div className="form-group col">
+              <label htmlFor="first_name">First Name</label>
+              <input  onChange={this.handleChange} className="form-control form-control-lg"
+                type="text" id="first_name" name="first_name" value={this.state.first_name} required />
+            </div>
+
+            <div className="form-group col">
+              <label htmlFor="last_name">Last Name</label>
+              <input  onChange={this.handleChange} className="form-control form-control-lg"
+                type="text" id="last_name" name="last_name" value={this.state.last_name} required />
+           </div>
+
           </div>
-          <div className="form-group">
-            <label htmlFor="last_name">Last Name</label>
-            <input  onChange={this.handleChange} className="form-control form-control-lg"
-              type="text" id="last_name" name="last_name" value={this.state.last_name} required />
-          </div>
+          
+          
           <div className="form-group">
             <label htmlFor="name">Email</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="email" id="email"
@@ -63,34 +75,31 @@ class Register extends Component {
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="text"
               name="birthday" value={this.state.birthday} required />
           </div>
-          <div className="form-group">
-            <label htmlFor="name">Password</label>
-            <input
-              onChange={this.handleChange}
-              className="form-control form-control-lg"
-              type="password"
-              id="password"
-              name="password"
-              value={this.state.password}
-              required
-            />
+          <div className="row">
+            <div className="form-group col ">
+              <label htmlFor="name">Password</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg"
+                type="password" id="password" name="password" value={this.state.password}
+                required />
+            </div>
+
+            <div className="form-group col">
+              <label htmlFor="password2">Confirm Password</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg"
+                type="password" id="password2" name="password2" value={this.state.password2}
+                required />
+           </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="password2">Confirm Password</label>
-            <input
-              onChange={this.handleChange}
-              className="form-control form-control-lg"
-              type="password"
-              id="password2"
-              name="password2"
-              value={this.state.password2}
-              required
-            />
-          </div>
+          
+          
           <button onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">
             Register
           </button>
          </form>
+        </div>
+      </div>
+      <div className="col"></div>
+    </ div>      
     );
   }
 }
