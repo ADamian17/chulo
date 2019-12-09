@@ -63,7 +63,7 @@ const Home = () => {
               <li><b>2 Screens Included</b></li>
               <li><b>Commercials Included</b></li>
             </ul>
-            <button type="button" className="btn btn-lg btn-block btn-outline-dark"  href="/signup">Sign up for free</button>
+            <a type="button" className="btn btn-lg btn-block btn-outline-primary"  href="/signup">Sign up for free</a>
           </div>
         </div>
         <div className="card mb-4 shadow-sm precio">
@@ -77,7 +77,7 @@ const Home = () => {
               <li><b>4 Screens Included</b></li>
               <li><b>No Commercials</b></li>
             </ul>
-            <button type="button" className="btn btn-lg btn-block btn-outline-dark"  href="/signup">Sign up for free</button>
+            <a type="button" className="btn btn-lg- btn-block btn-outline-primary"  href="/signup">Sign up for free</a>
           </div>
         </div>
       </div>
