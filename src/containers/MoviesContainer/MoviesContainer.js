@@ -51,7 +51,6 @@ class MoviesContainer extends Component {
   
 
   render() {
-   console.log(this.state.moviesData) 
    const movieDetails = this.state.moviesData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
    const userDetails = this.state.userMovies.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (

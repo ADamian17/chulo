@@ -4,9 +4,6 @@ import React from 'react';
 
 const MovieDetail = props => {
 
-  console.log(props.movieDetail.title)
-  console.log(props.movieDetail.description)
-
   if (!props.movieDetail.img && !props.movieDetail.description && !props.movieDetail.title) {
     return (
       <div className="row align-items-center">
@@ -24,7 +21,6 @@ const MovieDetail = props => {
   const description =  props.movieDetail.description
     return (
       <>
-  
       <div className="album py-5 movieHome">
         <div className="container">
         <div className="card mb-3" >

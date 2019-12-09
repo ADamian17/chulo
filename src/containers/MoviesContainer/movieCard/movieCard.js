@@ -16,7 +16,6 @@ class MovieCard extends Component {
 
   //  Add movie
    handleClick = (event) => {
-    console.log('click') 
     event.preventDefault()
     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/my_movies/${this.props.movie._id}`, { withCredentials: true })
     this.setState({
@@ -35,7 +34,6 @@ class MovieCard extends Component {
         movieDetails: res.data.data,
         selectedMovie: res.data.data._id
       })
-      console.log(res)
     })
     .catch(err => console.log(`${err} para detalles no detalles`))
   }
@@ -48,8 +46,6 @@ class MovieCard extends Component {
         <div className="card mb-4 shadow-sm movieCard ">
          <img src={this.props.movie.img} alt="ima" width="100%" height="100%" />
           <div className="card-body flip-card-inner">
-            
-            {/* <p className="card-text">{this.props.movie.description}</p> */}
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
             <button type="button" className="btn rounded-circle btn-sm btn-outline-secondary"  onClick={this.handleClick} >Add</button>
