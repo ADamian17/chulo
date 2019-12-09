@@ -1,12 +1,20 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import './Navbar.css'
+
 const Navbar = props => {
   return (
     <header>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
         <div className="container">
-          <Link className="navbar-brand" to="/welcome">Chulo</Link>
+          {!props.currentUser ?
+           <>
+            <Link className="navbar-brand" to="/">Chulo</Link>
+            </> :
+            <>
+            <Link className="navbar-brand" to="/movies">Chulo</Link>
+            </>}
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -16,22 +24,28 @@ const Navbar = props => {
 
               {!props.currentUser ? 
               <>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink className="nav-link" to='/signup'>Signup</NavLink>
-                </li>
+                </li> */}
                 <li>
                 <NavLink className="nav-link" to="/login">Login</NavLink>
                 </li>
               </> : 
                 <>
                   <li className="nav-item">
-                    <NavLink className="nav-link" exact to="/movies">Home</NavLink>
+                    <NavLink className="nav-link" exact to="/mymovies">myMovies</NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/profile">Profile</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink onClick={props.logout} className="nav-link" to="/welcome">Logout</NavLink>
+                  {/* <form className="form-inline my-2 my-lg-0">
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                  </form> */}
+                  <li className="nav-item dropdown">
+                    <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Menu
+                    </NavLink>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <NavLink className="dropdown-item" to="/profile">Account</NavLink>
+                      <NavLink onClick={props.logout} className="dropdown-item" to="/">Logout</NavLink>
+                    </div>
                   </li>
                 </> }
             </ul>

@@ -1,0 +1,11 @@
+.movieHome{
+  background-color: rgb(21, 20, 20) !important;
+}
+
+.hero{
+  background-image: url('../../components/Home/asset/joker-movie.png');
+  background-position: center;
+  background-size: cover;
+  color: aliceblue;
+  height: 50vh;
+}

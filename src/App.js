@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Routes from './config/routes';
@@ -25,7 +26,7 @@ class App extends Component {
       .then(res => {
         this.setState({ currentUser: null });
         localStorage.removeItem('uid');
-        this.props.history.push('/login');
+        this.props.history.push('/');
       })
       .catch(err => console.log(err));
   }
@@ -33,14 +34,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
-        {/* <footer className="text-muted">
-          <div className="container">
-            <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-            <p>New to Bootstrap?</p>
-          </div>
-        </footer> */}
+        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
       </>
     );
   }

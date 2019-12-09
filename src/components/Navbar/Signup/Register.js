@@ -4,13 +4,14 @@ import {withRouter} from  'react-router-dom';
 
 
 class Register extends Component {
+  
   state = {
-    name: "",
-    email:"",
-    password: "",
-    password2: "",
-    birthday: "",
-    free_plan: false,
+    first_name: '',
+    last_name: '',
+     email: '',
+     password: '',
+     password2: '',
+     birthday: '',
   }
   
   handleChange = event => {
@@ -25,14 +26,13 @@ class Register extends Component {
       withCredentials: true,
     })
     .then((res) => {
-      console.log(res)
       this.setState({
-        name: '',
+       first_name: '',
+       last_name: '',
         email: '',
         password: '',
         password2: '',
         birthday: '',
-        free_plan: true
       });
       this.props.history.push('/login');
     })
@@ -42,13 +42,29 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container">
+     
+       <div className="row align-itmes-center mt-5 p-5">
+        <div className="col"></div> 
+        <div className="col-9"> 
+        < div className="conatainer">
         <form>
-          <div className="form-group">
-            <label htmlFor="name">Full Name</label>
-            <input  onChange={this.handleChange} className="form-control form-control-lg"
-              type="text" id="name" name="name" value={this.state.name} required />
+          <h1 className="text-center mb-4">Sign Up</h1>
+          <div className="row">
+            <div className="form-group col">
+              <label htmlFor="first_name">First Name</label>
+              <input  onChange={this.handleChange} className="form-control form-control-lg"
+                type="text" id="first_name" name="first_name" value={this.state.first_name} required />
+            </div>
+
+            <div className="form-group col">
+              <label htmlFor="last_name">Last Name</label>
+              <input  onChange={this.handleChange} className="form-control form-control-lg"
+                type="text" id="last_name" name="last_name" value={this.state.last_name} required />
+           </div>
+
           </div>
+          
+          
           <div className="form-group">
             <label htmlFor="name">Email</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="email" id="email"
@@ -59,35 +75,31 @@ class Register extends Component {
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="text"
               name="birthday" value={this.state.birthday} required />
           </div>
-          <div className="form-group">
-            <label htmlFor="name">Password</label>
-            <input
-              onChange={this.handleChange}
-              className="form-control form-control-lg"
-              type="password"
-              id="password"
-              name="password"
-              value={this.state.password}
-              required
-            />
+          <div className="row">
+            <div className="form-group col ">
+              <label htmlFor="name">Password</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg"
+                type="password" id="password" name="password" value={this.state.password}
+                required />
+            </div>
+
+            <div className="form-group col">
+              <label htmlFor="password2">Confirm Password</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg"
+                type="password" id="password2" name="password2" value={this.state.password2}
+                required />
+           </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="password2">Confirm Password</label>
-            <input
-              onChange={this.handleChange}
-              className="form-control form-control-lg"
-              type="password"
-              id="password2"
-              name="password2"
-              value={this.state.password2}
-              required
-            />
-          </div>
+          
+          
           <button onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">
             Register
           </button>
-        </form>
+         </form>
+        </div>
       </div>
+      <div className="col"></div>
+    </ div>      
     );
   }
 }
