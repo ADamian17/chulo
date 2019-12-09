@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { withRouter, Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 import MovieDetail from '../MovieDetail/MovieDetail'
@@ -53,24 +53,19 @@ class MovieCard extends Component {
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
             <button type="button" className="btn rounded-circle btn-sm btn-outline-secondary"  onClick={this.handleClick} >Add</button>
-            <button to="/moviedetail" type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target=".bd-example-modal-xlPro">Details</button>
+            <button  type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
           </div>
           </div>
          </div>
        </div>
      </div>
 
-
-     {/* <!-- Button trigger modal --> */}
-      {/* <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterPro">
-        Launch demo modal
-      </button> */}
-
-      {/* <!-- Modal --> */}
-
-        <div className="modal fade bd-example-modal-xlPro" tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div className="modal fade bd-example-modal-xlPro" id={`movie-${this.props.movie._id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
+            <button type="button" className="text-right mr-2 close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             < MovieDetail  movieDetail={this.state.movieDetails}/>
             </div>
           </div>

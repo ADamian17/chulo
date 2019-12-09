@@ -41,6 +41,12 @@ class MoviesContainer extends Component {
       loaded: true 
     })
   }
+
+  componentDidUpdate(prevState) { 
+    if (this.state.movieDetails !== prevState.moviesData) {
+      this.fetchData(this.state.movieDetails);
+    }
+  }
   
   
 

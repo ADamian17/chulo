@@ -6,13 +6,22 @@ import PaymentForm from '../../components/Payment/PaymentForm/PaymentForm'
 const  Payment = props => {
 
   if (!props.profileData.payment) {
-    return <h2>Loading...</h2>
+    return (
+      <div className="row align-items-center">
+        <div className="col">
+          <div className="spinner-border text-center" role="status">
+           <span className="sr-only">Loading...</span>
+         </div>
+        </div>
+      </div>
+    )
   }
+   
+  // get last 4 dig
+     const paymentInf = props.profileData.payment;
+    let card = parseInt(paymentInf.card_num)
+    console.log(card)
 
-    const paymentInf = props.profileData.payment;
-    // const cardNUm = props.profileData.payment.card_num
-    // console.log(paymentInf.card_num)
-    
     return (
       <>
        <div className="card text-center">
