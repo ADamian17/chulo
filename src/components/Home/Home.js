@@ -23,7 +23,10 @@ const Home = () => {
       ================================================== --> */}
       <div className="row underHero align-items-center">
         <div className="col text-center">
-          <span className=""><a href="/#plans" className="btn btn-link">Check Plans</a></span>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nam magni sunt maiores tempora maxime optio quam quis perspiciatis quia. Laborum praesentium corrupti id incidunt iure eaque itaque. Consequuntur, veniam?</p>
+        </div>
+        <div className="col text-center">
+          <span className=""><a href="/#plans" className="btn btn-dark">Check Plans</a></span>
         </div>
       </div>
       <div className="row photoSection">
@@ -44,12 +47,13 @@ const Home = () => {
          <img src="http://www.gstatic.com/tv/thumb/v22vodart/11724/p11724_v_v8_ac.jpg" alt="img" className="img-fluid imgSction" />
         </div>
       </div>
-
-     <div id="plans" className="row"> 
-     <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 className="display-4">Pricing</h1>
-       <p className="lead">Sign up today for the best pricing available!.</p>
+     <div className="row">
+      <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 className="display-4">Pricing</h1>
+        <p className="lead">Sign up today for the best pricing available!.</p>
+      </div>
      </div>
+     <div id="plans" className="row"> 
      <div className="container ">
       <div className="card-deck mb-3 text-center">
         <div className="card mb-4 shadow-sm precio">
