@@ -1,0 +1,22 @@
+.movieCard{
+  background-color: rgb(21, 20, 20) !important;
+  color: aliceblue;
+} 
+
+
+.movieCard:hover {
+  transform: scale(1.1) ;
+  opacity: 1 !important;
+  transition: 0.5s ease-out;
+  z-index: 1;
+  -webkit-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+  -moz-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+  box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+}
+
+.movieDetails {
+  background-color: rgb(21, 20, 20) !important;
+  -webkit-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+  -moz-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+  box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
+}

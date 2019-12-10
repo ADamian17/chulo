@@ -46,8 +46,8 @@ class Register extends Component {
        <div className="row align-itmes-center mt-5 p-5">
         <div className="col"></div> 
         <div className="col-9"> 
-        < div className="conatainer">
         <form>
+        < div className="conatainer">
           <h1 className="text-center mb-4">Sign Up</h1>
           <div className="row">
             <div className="form-group col">
@@ -95,8 +95,8 @@ class Register extends Component {
           <button onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">
             Register
           </button>
+          </div>
          </form>
-        </div>
       </div>
       <div className="col"></div>
     </ div>      

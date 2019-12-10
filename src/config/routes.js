@@ -5,7 +5,8 @@ import Home from '../components/Home/Home';
 import Register from '../components/Navbar/Signup/Register'
 import Login from '../components/Navbar/Login/Login';
 import Profile from '../containers/ProfileContainer/ProfileContainer';
-import Movies from '../containers/MoviesContainer/MoviesContainer';
+import MoviesContainer from '../containers/MoviesContainer/MoviesContainer';
+import MyMoviesContainer from '../containers/MyMoviesContainer/MyMoviesContainer';
 
 
 export default ({currentUser, setCurrentUser, logout }) => (
@@ -21,11 +22,11 @@ export default ({currentUser, setCurrentUser, logout }) => (
       )}
     />
     <Route path="/movies" render={() => (
-        <Movies currentUser={currentUser} />
+        <MoviesContainer currentUser={currentUser} />
       )}
     />
     <Route path="/mymovies" render={() => (
-        <Movies currentUser={currentUser} user/>
+        <MyMoviesContainer currentUser={currentUser} user/>
       )}
     />
   </Switch>
