@@ -29,7 +29,7 @@ const  Payment = props => {
     return (
       <>
        <div className="card text-center">
-          <div className="card-body">
+          <div className="card-body profile-border">
             <h5 className="card-title">Payment Info</h5>
             <strong className="card-text">Card in File</strong>
              <p>xxxx-xxxx-{miNum}</p>

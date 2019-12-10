@@ -3,7 +3,8 @@ import React from 'react';
 
 import UserUpdateForm from '../../../containers/ProfileContainer/UserUpdateForm/UserUpdateForm';
 import Payment from '../../../components/Payment/Payment';
-// import PaymentForm from  '../../Payment/PaymentForm/PaymentForm'
+
+import './Profile.css'
 
 const Profile = (props) => {
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
@@ -11,7 +12,19 @@ const Profile = (props) => {
    const email = props.profileData.email;
   
    return (
-     <div className="row mt-5 p-3">
+    <> 
+     <div className="row align-items-center">
+       <div className="col">
+        <section className="jumbotron text-center mb-0">
+          <div className="container mt-5">
+            <h1>Manage Your Account</h1>
+            <p>
+            </p>
+          </div>
+        </section>
+       </div>
+     </div>
+     <div className="row p-3">
       <div className="col"> 
       <ul className="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
         <li className="nav-item">
@@ -29,7 +42,7 @@ const Profile = (props) => {
             </div>
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
-                <div className="card-body">
+                <div className="card-body profile-border">
                   <h5 className="card-title">{full_name}</h5>
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
@@ -66,7 +79,11 @@ const Profile = (props) => {
         </div>
       </div>
      </div>
-    </div> 
+    </div>
+    <footer className="blog-footer text-center mb-2 p-2">
+      <p>&copy; 2019  Adonis D. Martin</p>
+   </footer> 
+   </> 
    )
 }
 

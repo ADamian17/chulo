@@ -22,7 +22,7 @@ class  Login extends Component {
 
 
   handleError = () => {
-    if (this.state.email !== "" ) {
+    if (this.state !== "" ) {
       return true
     }
   }

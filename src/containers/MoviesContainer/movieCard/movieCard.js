@@ -10,6 +10,7 @@ class MovieCard extends Component {
    state = {
      movieId: "",
      addedMovie: false, 
+     removeMovie: false, 
      movieDetails: {},
      selectedMovie: ''
    }
@@ -21,6 +22,15 @@ class MovieCard extends Component {
     this.setState({
       movieId: this.props.movie._id,
       addedMovie: true,
+    })
+  }
+
+   handleRemoveMovie = (event) => {
+    event.preventDefault()
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/my_movies/${this.props.movie._id}/removemovie`, { withCredentials: true })
+    this.setState({
+      movieId: this.props.movie._id,
+      removeMovie: true,
     })
   }
   
@@ -48,7 +58,16 @@ class MovieCard extends Component {
           <div className="card-body flip-card-inner">
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
-            <button type="button" className={`btn rounded-circle btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleClick} >Add</button>
+            { this.state.addedMovie ?
+              <>
+
+              <button type="button" className={`btn rounded-circle btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleClick} >Add</button>
+
+              </>:
+              <>
+               <button type="button" className={`btn rounded-circle btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleRemoveMovie} >removeMovie</button>
+            </> }
+
             <button  type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
           </div>
           </div>
