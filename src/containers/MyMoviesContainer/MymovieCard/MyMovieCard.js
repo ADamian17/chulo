@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-import MovieDetail from '../MovieDetail/MovieDetail'
+import MovieDetail from '../../MoviesContainer/MovieDetail/MovieDetail'
 
-import './movieCard.css'
+// import './movieCard.css'
 class MovieCard extends Component {
   
    state = {
@@ -16,16 +16,6 @@ class MovieCard extends Component {
      showAddButton: true  
    }
 
-  //  Add movie
-   handleClick = (event) => {
-    event.preventDefault()
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/my_movies/${this.props.movie._id}`, { withCredentials: true })
-    this.setState({
-      movieId: this.props.movie._id,
-      addedMovie: true,
-    })
-  }
-
    handleRemoveMovie = (event) => {
     event.preventDefault()
     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/my_movies/${this.props.movie._id}/removemovie`, { withCredentials: true })
@@ -34,7 +24,6 @@ class MovieCard extends Component {
       removeMovie: true,
     })
   }
-  
   
   // Movie details
   handleDetails = (event) => {
@@ -50,7 +39,6 @@ class MovieCard extends Component {
   }
    
   render () {
-      
     return (
       <>
       <div className="col-md-4">
@@ -59,7 +47,7 @@ class MovieCard extends Component {
           <div className="card-body flip-card-inner">
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
-              <button type="button" className={`btn  btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleClick} >√</button>
+              <button type="button" className={`btn btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleRemoveMovie} >--</button>
               <button  type="button" className="btn  btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
             </div>
             </div>

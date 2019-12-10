@@ -3,10 +3,11 @@ import React from 'react';
 
 import UserUpdateForm from '../../../containers/ProfileContainer/UserUpdateForm/UserUpdateForm';
 import Payment from '../../../components/Payment/Payment';
+import PaymentForm from '../../Payment/PaymentForm/PaymentForm';
 
 import './Profile.css'
 
-const Profile = (props) => {
+const Profile = props => {
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
    const birthDay = props.profileData.birthday;
    const email = props.profileData.email;
@@ -40,24 +41,27 @@ const Profile = (props) => {
             <div className="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
               <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment} handleAddPayment={props.handleAddPayment}/>
             </div>
+           {/* card  */}
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
                 <div className="card-body profile-border">
                   <h5 className="card-title">{full_name}</h5>
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
-                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-                  {/* <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPay">Add Payment</button> */}
-                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModal">Cancel Subcription</button>
+                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#userUpdateForm">Edit</button>
+                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#paymentForm">Add Payment</button>
+                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#warningModal">Cancel Subcription</button>
                 </div>
              </div>
            </div>
+          {/*card ends  */}
            <UserUpdateForm handleUserUpdate={props.handleUserUpdate}/>
-           {/* <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment}/> */}
+
+           <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment} />
 
 
             {/* <!-- Modal --> */}
-            <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="warningModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog" role="document">
                 <div className="modal-content">
                   <div className="modal-header">
