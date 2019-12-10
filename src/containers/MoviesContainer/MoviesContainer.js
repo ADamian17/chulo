@@ -50,7 +50,7 @@ class MoviesContainer extends Component {
    const userDetails = this.state.userMovies.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
-      <section className="jumbotron text-left mb-0 hero">
+      <section className="jumbotron text-left mb-0 mt-5 hero">
       <div className="container">
         <h1>A Movie for Everyone</h1>
         <p className="lead ">The widest variety of movies, anywhere!</p>

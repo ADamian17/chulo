@@ -12,7 +12,8 @@ class MovieCard extends Component {
      addedMovie: false, 
      removeMovie: false, 
      movieDetails: {},
-     selectedMovie: ''
+     selectedMovie: '',
+     showAddButton: true  
    }
 
   //  Add movie
@@ -58,23 +59,14 @@ class MovieCard extends Component {
           <div className="card-body flip-card-inner">
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
-            { this.state.addedMovie ?
-              <>
-
-              <button type="button" className={`btn rounded-circle btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleClick} >Add</button>
-
-              </>:
-              <>
-               <button type="button" className={`btn rounded-circle btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleRemoveMovie} >removeMovie</button>
-            </> }
-
-            <button  type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
-          </div>
+              <button type="button" className={`btn  btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleClick} >Add</button>
+              <button  type="button" className="btn  btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
+            </div>
+            </div>
           </div>
          </div>
-       </div>
-     </div>
-
+        </div>
+        
         <div className="modal fade bd-example-modal-xlPro" id={`movie-${this.props.movie._id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-xl " role="document">
             <div className="modal-content movieDetails">

@@ -80,9 +80,6 @@ const Profile = (props) => {
       </div>
      </div>
     </div>
-    <footer className="blog-footer text-center mb-2 p-2">
-      <p>&copy; 2019  Adonis D. Martin</p>
-   </footer> 
    </> 
    )
 }
