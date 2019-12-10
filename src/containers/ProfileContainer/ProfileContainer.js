@@ -39,21 +39,21 @@ class ProfileContainer extends Component{
   }
 
 
-  handleAddPayment = (event, payment ) => {
-    console.log('clicked!')
-    event.preventDefault();
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, payment, { payment:{...this.state}}, {
-      withCredentials: true,
-    })
-    .then((res) => {
-      this.setState({
-       paymentAdded: true,
-       userData: payment
-      });
-      console.log('payment added')
-    })
-    .catch((err) => console.log(err))
-  };
+  // handleAddPayment = (event, payment ) => {
+  //   console.log('clicked!')
+  //   event.preventDefault();
+  //   axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { payment:{...this.state}}, {
+  //     withCredentials: true,
+  //   })
+  //   .then((res) => {
+  //     this.setState({
+  //      paymentAdded: true,
+  //      userData: payment
+  //     });
+  //     console.log('payment added')
+  //   })
+  //   .catch((err) => console.log(err))
+  // };
 
 
 
@@ -73,7 +73,6 @@ class ProfileContainer extends Component{
   
   handleUserDelete = (event) => {
     event.preventDefault();
-    console.log('click')
     axios.delete(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { withCredentials: true })
      .then(res => {
       this.props.logout()
@@ -90,8 +89,6 @@ class ProfileContainer extends Component{
        handleUserUpdate={this.handleUserUpdate} handleUserDelete={this.handleUserDelete } 
        handleDeletePayment={this.handleDeletePayment} handleAddPayment={this.handleAddPayment}/>
       </>
-     
-     
     )
   }
 } 

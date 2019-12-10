@@ -11,7 +11,6 @@ class MoviesContainer extends Component {
   state = {
     moviesData: [],
     filteredData:[],
-    userMovies:[],
     // showFilter:  
   }
 
@@ -27,9 +26,6 @@ class MoviesContainer extends Component {
 
   fetchData = async () => {
     // Dalton helped
-    const userMovies = await axios.get(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { withCredentials: true }); 
-  
-
     const moviesData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
    
     const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['Crime, Action'])}`, { withCredentials: true });
@@ -37,7 +33,6 @@ class MoviesContainer extends Component {
 
     this.setState({
       moviesData: moviesData.data.data,
-      userMovies: userMovies.data.data.my_movies, 
       filteredData: filteredData.data.data,
       loaded: true 
     })
@@ -47,7 +42,6 @@ class MoviesContainer extends Component {
 
   render() {
    const movieDetails = this.state.moviesData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
-   const userDetails = this.state.userMovies.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
       <section className="jumbotron text-left mb-0 mt-5 hero">
@@ -64,7 +58,6 @@ class MoviesContainer extends Component {
 
         <div className="row">
           {!this.props.user && movieDetails}
-          {this.props.user && userDetails}
         </div>
       </div>
     </div>
