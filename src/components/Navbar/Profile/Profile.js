@@ -3,7 +3,7 @@ import React from 'react';
 
 import UserUpdateForm from '../../../containers/ProfileContainer/UserUpdateForm/UserUpdateForm';
 import Payment from '../../../components/Payment/Payment';
-import PaymentForm from  '../../Payment/PaymentForm/PaymentForm'
+// import PaymentForm from  '../../Payment/PaymentForm/PaymentForm'
 
 const Profile = (props) => {
   console.log(props.profileData)
@@ -35,13 +35,13 @@ const Profile = (props) => {
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPro">Add Payment</button>
+                  {/* <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPay">Add Payment</button> */}
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModal">Cancel Subcription</button>
                 </div>
              </div>
            </div>
            <UserUpdateForm handleUserUpdate={props.handleUserUpdate}/>
-           <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment}/>
+           {/* <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment}/> */}
 
 
             {/* <!-- Modal --> */}
