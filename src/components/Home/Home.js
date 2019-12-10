@@ -88,7 +88,7 @@ const Home = () => {
       <p>
         <a href="#header-section">Back to top</a>
       </p>
-        <p> <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>&copy; 2019  Adonis D. Martin</p>
    </footer>
   </div> 
   )

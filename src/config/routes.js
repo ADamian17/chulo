@@ -6,7 +6,6 @@ import Register from '../components/Navbar/Signup/Register'
 import Login from '../components/Navbar/Login/Login';
 import Profile from '../containers/ProfileContainer/ProfileContainer';
 import Movies from '../containers/MoviesContainer/MoviesContainer';
-import MovieDetail from '../containers/MoviesContainer/MovieDetail/MovieDetail';
 
 
 export default ({currentUser, setCurrentUser, logout }) => (
@@ -29,7 +28,6 @@ export default ({currentUser, setCurrentUser, logout }) => (
         <Movies currentUser={currentUser} user/>
       )}
     />
-    <Route path="/moviedetail" component={MovieDetail} /> 
   </Switch>
 )
 

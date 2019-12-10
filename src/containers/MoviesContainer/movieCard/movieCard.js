@@ -48,7 +48,7 @@ class MovieCard extends Component {
           <div className="card-body flip-card-inner">
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
-            <button type="button" className="btn rounded-circle btn-sm btn-outline-secondary"  onClick={this.handleClick} >Add</button>
+            <button type="button" className={`btn rounded-circle btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleClick} >Add</button>
             <button  type="button" className="btn rounded-circle btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
           </div>
           </div>

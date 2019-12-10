@@ -2,12 +2,17 @@
   border: none;
   border-bottom: 2px solid black !important;
 } */
-
+/* 
 input:invalid {
   border: 2px solid red;
-}
+}*/
 
 input:valid {
   border: 2px solid green
+} 
+
+input:focus:invalid {
+  box-shadow: none;
+  border: 2px solid red;
 }
 
