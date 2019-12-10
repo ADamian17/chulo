@@ -9,11 +9,8 @@ class MovieCard extends Component {
   
    state = {
      movieId: "",
-     addedMovie: false, 
      removeMovie: false, 
      movieDetails: {},
-     selectedMovie: '',
-     showAddButton: true  
    }
 
    handleRemoveMovie = (event) => {
@@ -35,7 +32,7 @@ class MovieCard extends Component {
         selectedMovie: res.data.data._id
       })
     })
-    .catch(err => console.log(`${err} para detalles no detalles`))
+    .catch(err => console.log(err))
   }
    
   render () {
