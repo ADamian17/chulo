@@ -57,9 +57,9 @@ class MovieCard extends Component {
      </div>
 
         <div className="modal fade bd-example-modal-xlPro" id={`movie-${this.props.movie._id}`} tabIndex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-          <div className="modal-dialog modal-xl" role="document">
-            <div className="modal-content">
-            <button type="button" className="text-right mr-2 close" data-dismiss="modal" aria-label="Close">
+          <div className="modal-dialog modal-xl " role="document">
+            <div className="modal-content movieDetails">
+            <button type="button" className="text-right mr-2 close " data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
             < MovieDetail  movieDetail={this.state.movieDetails}/>
