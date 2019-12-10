@@ -3,16 +3,28 @@ import React from 'react';
 
 import UserUpdateForm from '../../../containers/ProfileContainer/UserUpdateForm/UserUpdateForm';
 import Payment from '../../../components/Payment/Payment';
-import PaymentForm from  '../../Payment/PaymentForm/PaymentForm'
+
+import './Profile.css'
 
 const Profile = (props) => {
-  console.log(props.profileData)
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
    const birthDay = props.profileData.birthday;
    const email = props.profileData.email;
   
    return (
-     <div className="row mt-5 p-3">
+    <> 
+     <div className="row align-items-center">
+       <div className="col">
+        <section className="jumbotron text-center mb-0">
+          <div className="container mt-5">
+            <h1>Manage Your Account</h1>
+            <p>
+            </p>
+          </div>
+        </section>
+       </div>
+     </div>
+     <div className="row p-3">
       <div className="col"> 
       <ul className="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
         <li className="nav-item">
@@ -30,18 +42,18 @@ const Profile = (props) => {
             </div>
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
-                <div className="card-body">
+                <div className="card-body profile-border">
                   <h5 className="card-title">{full_name}</h5>
                   <p className="card-text">{email}</p>
                   <p className="card-text">{birthDay}</p>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPro">Add Payment</button>
+                  {/* <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPay">Add Payment</button> */}
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModal">Cancel Subcription</button>
                 </div>
              </div>
            </div>
            <UserUpdateForm handleUserUpdate={props.handleUserUpdate}/>
-           <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment}/>
+           {/* <PaymentForm currentUser={props.currentUser}  handleAddPayment={props.handleAddPayment}/> */}
 
 
             {/* <!-- Modal --> */}
@@ -67,7 +79,8 @@ const Profile = (props) => {
         </div>
       </div>
      </div>
-    </div> 
+    </div>
+   </> 
    )
 }
 

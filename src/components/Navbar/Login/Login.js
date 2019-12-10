@@ -11,6 +11,7 @@ class  Login extends Component {
   state = {
     email: '',
     password: '',
+    error: false
   };
 
   handleChange = (event) => {
@@ -19,9 +20,16 @@ class  Login extends Component {
     }); 
   };
 
+
+  handleError = () => {
+    if (this.state !== "" ) {
+      return true
+    }
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state)
+   if ( this.handleError() ) {
     axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {
       withCredentials: true,
     })
@@ -31,6 +39,12 @@ class  Login extends Component {
       this.props.history.push('/movies');
     })
     .catch((err) => console.log(err));
+   } else {
+     this.setState ({
+       error: true,
+     })
+   }
+    
   }
 
   render () {
@@ -48,12 +62,14 @@ class  Login extends Component {
             <h1 className="text-center mb-3">Login</h1>
             <form className="form-signin forma">
               <div className="form-group ">
-                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="email" name="email" maxLength="25" minLength="2" placeholder="Email" required/>
+                <input onChange={this.handleChange} className={`form-control form-control-lg ${this.state.error && 'error'}`} type="text" id="email" name="email" maxLength="25" minLength="2" placeholder="Email" required />
+                { this.state.error && <p>error</p>}
               </div>
               <div className="form-group">
                 <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="Password" name="password" maxLength="25" minLength="2" placeholder="Password" required />
+                { this.state.error && <p>error</p>}
               </div>
-              <button onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">Login</button>
+              <button onClick={this.handleSubmit} className="btn btn-primary float-right btn-block" type="submit">Login</button>
             </form>
           </div>
         </div>

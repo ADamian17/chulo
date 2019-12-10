@@ -22,7 +22,7 @@ class PaymentForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // console.log(this.state);
+    console.log(this.state);
     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { payment:{...this.state}}, {
       withCredentials: true,
     })
@@ -43,8 +43,8 @@ class PaymentForm extends Component {
   render() {
     return (
 
-      <div>
-      <div className="modal fade" id="exampleModalPro" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     
+      <div className="modal fade" id="exampleModalPay" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -100,7 +100,6 @@ class PaymentForm extends Component {
             </div>
         </div>
       </div> 
-    </div> 
     );
   }
 }

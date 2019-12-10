@@ -12,7 +12,12 @@ class UserUpdateForm extends React.Component {
       [event.target.name]: event.target.value,
     })
   }
-
+   
+  handleError = () => {
+    if (this.state !== "" ) {
+      return true
+    }
+  }
   // clearInput = () => {
   //   this.setState({
   //     first_name: '',
@@ -37,15 +42,15 @@ class UserUpdateForm extends React.Component {
               <form>
                 <div className="form-group">
                   <label htmlFor="first_name">First Name</label>
-                  <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="first_name" name="first_name" value={this.state.first_name} required/>
+                  <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="first_name" name="first_name" value={this.state.first_name} maxLength="25" minLength="2" required/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="last_name">Last Name</label>
-                  <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="last_name" name="last_name" value={this.state.last_name} required/>
+                  <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="last_name" name="last_name" value={this.state.last_name} maxLength="25" minLength="2" required/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="currentCity">Email</label>
-                  <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="Email" name="email" value={this.state.email} required/>
+                  <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="Email" name="email" value={this.state.email} maxLength="25" minLength="2" required/>
                 </div>
               </form>
               </div>

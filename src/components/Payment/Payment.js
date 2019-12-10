@@ -2,7 +2,6 @@ import React from 'react';
 
 import PaymentForm from '../../components/Payment/PaymentForm/PaymentForm'
 
-
 const  Payment = props => {
 
   if (!props.profileData.payment) {
@@ -19,18 +18,23 @@ const  Payment = props => {
    
   // get last 4 dig
      const paymentInf = props.profileData.payment;
-    let card = parseInt(paymentInf.card_num)
-    console.log(card)
+    let card = paymentInf.card_num.split("")
+    let miNum = []; 
+     for (let i = card.length -1; i >= 8; i--) {
+       let lastNum = card[i]
+       miNum.push(lastNum)
+    }
+    
 
     return (
       <>
        <div className="card text-center">
-          <div className="card-body">
+          <div className="card-body profile-border">
             <h5 className="card-title">Payment Info</h5>
             <strong className="card-text">Card in File</strong>
-            <p>{paymentInf.card_num}</p>
+             <p>xxxx-xxxx-{miNum}</p>
             <br />
-            <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalLong">Edit</button>
+            <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPay">Edit</button>
             <button type="button" className="btn btn-link" onClick={props.handleDeletePayment} >delete</button>
           </div>
         </div>
