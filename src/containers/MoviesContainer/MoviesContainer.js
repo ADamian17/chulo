@@ -12,6 +12,7 @@ class MoviesContainer extends Component {
     moviesData: [],
     filteredData:[],
     userMovies:[],
+    // showFilter:  
   }
 
   componentDidMount() {
@@ -28,10 +29,10 @@ class MoviesContainer extends Component {
     // Dalton helped
     const userMovies = await axios.get(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { withCredentials: true }); 
   
-    
+
     const moviesData = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, { withCredentials: true });
    
-    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['fantasy, action'])}`, { withCredentials: true });
+    const filteredData = await axios.get(`${process.env.REACT_APP_API_URL}/movies?${this.createFilter(['Crime, Action'])}`, { withCredentials: true });
 
 
     this.setState({
