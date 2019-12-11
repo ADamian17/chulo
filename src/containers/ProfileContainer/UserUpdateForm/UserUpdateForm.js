@@ -18,13 +18,6 @@ class UserUpdateForm extends React.Component {
       return true
     }
   }
-  // clearInput = () => {
-  //   this.setState({
-  //     first_name: '',
-  //     last_name: '',
-  //     email: '',
-  //   })
-  // }
 
   render() {
     return (

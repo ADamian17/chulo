@@ -22,7 +22,6 @@ class PaymentForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
     axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, { payment:{...this.state}}, {
       withCredentials: true,
     })
@@ -35,7 +34,6 @@ class PaymentForm extends Component {
         exp_month: '',
         code: '',
       });
-      console.log(res)
     })
     .catch((err) => console.log(err))
   };

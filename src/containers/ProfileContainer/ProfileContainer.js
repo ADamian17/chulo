@@ -66,7 +66,6 @@ class ProfileContainer extends Component{
       this.setState({
         paymentDelete: true
       });
-      console.log("payment deleted")
     })
     .catch((err) => console.log(err))
   }
