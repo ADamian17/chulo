@@ -20,3 +20,7 @@
   -moz-box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
   box-shadow: -2px 2px 17px 6px rgba(212,204,212,1) !important;
 }
+
+.disabled {
+  background-color: brown !important;
+}

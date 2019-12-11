@@ -26,7 +26,7 @@ export default ({currentUser, setCurrentUser, logout }) => (
       )}
     />
     <Route path="/mymovies" render={() => (
-        <MyMoviesContainer currentUser={currentUser} user/>
+        <MyMoviesContainer currentUser={currentUser} />
       )}
     />
   </Switch>
