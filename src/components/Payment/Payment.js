@@ -34,7 +34,7 @@ const  Payment = props => {
             <strong className="card-text">Card in File</strong>
              <p>xxxx-xxxx-{miNum}</p>
             <br />
-            <button type="button" className="btn btn-link" data-toggle="modal" data-target="#exampleModalPay">Edit</button>
+            <button type="button" className="btn btn-link" data-toggle="modal" data-target="#paymentForm">Edit</button>
             <button type="button" className="btn btn-link" onClick={props.handleDeletePayment} >delete</button>
           </div>
         </div>

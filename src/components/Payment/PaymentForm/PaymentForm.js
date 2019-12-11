@@ -44,7 +44,7 @@ class PaymentForm extends Component {
     return (
 
      
-      <div className="modal fade" id="exampleModalPay" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div className="modal fade" id="paymentForm" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -92,7 +92,7 @@ class PaymentForm extends Component {
                         <input onChange={this.handleChange} className="form-control" type="password" id="code" name="code" value={this.state.code} required />
                       </div>
                     </div>
-                     <input type="submit" className="btn btn-primary"  />
+                     <input type="submit" className="btn btn-primary"  data-dismiss="paymentForm"/>
                     </form>
                   </div> 
                 </div> 
