@@ -8,19 +8,10 @@ import MovieDetail from '../../MoviesContainer/MovieDetail/MovieDetail'
 class MovieCard extends Component {
   
    state = {
-     movieId: "",
-     removeMovie: false, 
+     selectedMovieId: "",
      movieDetails: {},
    }
-
-   handleRemoveMovie = (event) => {
-    event.preventDefault()
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/my_movies/${this.props.movie._id}/removemovie`, { withCredentials: true })
-    this.setState({
-      movieId: this.props.movie._id,
-      removeMovie: true,
-    })
-  }
+    
   
   // Movie details
   handleDetails = (event) => {
@@ -29,7 +20,7 @@ class MovieCard extends Component {
     .then(res => {
       this.setState({
         movieDetails: res.data.data,
-        selectedMovie: res.data.data._id
+        selectedMovieId: res.data.data._id
       })
     })
     .catch(err => console.log(err))
@@ -44,7 +35,7 @@ class MovieCard extends Component {
           <div className="card-body flip-card-inner">
             <div className="d-flex justify-content-between align-items-center"> 
             <div className="btn-group">
-              <button type="button" className={`btn btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={this.handleRemoveMovie} >--</button>
+              <button type="button" className={`btn btn-sm btn-outline-secondary ${this.state.addedMovie && "disable"}`}  onClick={(event) => this.props.handleRemoveMovie(event, this.props.movie._id)} >--</button>
               <button  type="button" className="btn  btn-sm btn-outline-secondary" onClick={this.handleDetails} data-toggle="modal" data-target={`#movie-${this.props.movie._id}`}>Details</button>
             </div>
             </div>
