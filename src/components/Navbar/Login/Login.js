@@ -34,7 +34,6 @@ class  Login extends Component {
       withCredentials: true,
     })
     .then((res) => {
-      console.log(res)
       this.props.setCurrentUser(res.data.data);
       this.props.history.push('/movies');
     })
