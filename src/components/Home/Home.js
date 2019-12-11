@@ -23,9 +23,6 @@ const Home = () => {
       ================================================== --> */}
       <div className="row underHero align-items-center">
         <div className="col text-center">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nam magni sunt maiores tempora maxime optio quam quis perspiciatis quia. Laborum praesentium corrupti id incidunt iure eaque itaque. Consequuntur, veniam?</p>
-        </div>
-        <div className="col text-center">
           <span className=""><a href="/#plans" className="btn btn-dark">Check Plans</a></span>
         </div>
       </div>
