@@ -92,7 +92,7 @@ class PaymentForm extends Component {
                         <input onChange={this.handleChange} className="form-control" type="password" id="code" name="code" value={this.state.code} required />
                       </div>
                     </div>
-                     <input type="submit" className="btn btn-primary"  />
+                     <input type="submit" className="btn btn-primary"  data-dismiss="paymentForm"/>
                     </form>
                   </div> 
                 </div> 

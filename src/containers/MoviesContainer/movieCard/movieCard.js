@@ -10,7 +10,6 @@ class MovieCard extends Component {
    state = {
      movieId: "",
      addedMovie: false, 
-     removeMovie: false, 
      movieDetails: {},
      selectedMovie: '',
      showAddButton: true  
@@ -26,15 +25,6 @@ class MovieCard extends Component {
     })
   }
 
-   handleRemoveMovie = (event) => {
-    event.preventDefault()
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}/my_movies/${this.props.movie._id}/removemovie`, { withCredentials: true })
-    this.setState({
-      movieId: this.props.movie._id,
-      removeMovie: true,
-    })
-  }
-  
   
   // Movie details
   handleDetails = (event) => {
