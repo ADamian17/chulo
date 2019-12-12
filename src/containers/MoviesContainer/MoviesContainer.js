@@ -64,7 +64,7 @@ class MoviesContainer extends Component {
     </section>
     <div className="album py-5 movieHome">
       <div className="container">
-      <div className="row text-center">
+      <div className="row text-center mb-2">
          <div className="col">
          <div className="form-check form-check-inline">
           <input className="form-check-input"  onChange={this.handleChange} type="checkbox" id="inlineCheckbox1" value="action" />
