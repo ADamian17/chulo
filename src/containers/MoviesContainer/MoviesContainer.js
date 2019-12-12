@@ -64,7 +64,7 @@ class MoviesContainer extends Component {
     </section>
     <div className="album py-5 movieHome">
       <div className="container">
-      <div className="row text-center mt-3 mb-3">
+      {/* <div className="row text-center mb-3">
          <div className="col">
          <div className="form-check form-check-inline">
           <input className="form-check-input"  onChange={this.handleChange} type="checkbox" id="inlineCheckbox1" value="action" />
@@ -83,9 +83,10 @@ class MoviesContainer extends Component {
           <label className="form-check-label" htmlFor="inlineCheckbox3">Drama</label>
         </div>
        </div> 
-       </div>
+       </div> */}
         <div className="row">
-          { !this.props.user && this.state.selectedGenre ? genre : movieDetails }
+          {/* { !this.props.user && this.state.selectedGenre ? genre : movieDetails } */}
+          { !this.props.user && movieDetails }
         </div>
      </div> 
     </div>
