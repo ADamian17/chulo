@@ -9,7 +9,7 @@ import './Profile.css'
 
 const Profile = props => {
    const full_name = `${props.profileData.first_name} ${props.profileData.last_name}`;
-   const birthDay = props.profileData.birthday;
+  //  const birthDay = props.profileData.birthday;
    const email = props.profileData.email;
   
    return (
@@ -39,16 +39,16 @@ const Profile = props => {
         <div className="col-md-10 offset-md-1">
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
-              <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment} handleAddPayment={props.handleAddPayment}/>
+              {/* <Payment profileData={props.profileData} currentUser={props.currentUser} handleDeletePayment={props.handleDeletePayment} handleAddPayment={props.handleAddPayment}/> */}
             </div>
            {/* card  */}
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
                 <div className="card-body profile-border">
                   <h5 className="card-title">Full Name: {full_name}</h5>
-                  <p className="card-text">My Email: {email}</p>
+                  <p className="card-text">Email: {email}</p>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#userUpdateForm">Edit</button>
-                  <button type="button" className="btn btn-link" data-toggle="modal" data-target="#paymentForm">Add Payment</button>
+                  {/* <button type="button" className="btn btn-link" data-toggle="modal" data-target="#paymentForm">Add Payment</button> */}
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#warningModal">Cancel Subcription</button>
                 </div>
              </div>

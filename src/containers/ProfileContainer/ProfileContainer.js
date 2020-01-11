@@ -8,7 +8,7 @@ class ProfileContainer extends Component{
 
   state = {
     userData: [],
-    // paymentAdded: false,
+    paymentAdded: false,
     paymentDelete: false 
   }
 
