@@ -56,7 +56,6 @@ class  Login extends Component {
           <div className="col-4"></div>
         </div>
         <div className="row justify-content-center mt-5 p-5 needs-validation">
-          {/* <div className="col-md-4"></div> */}
           <div className="col-md-4 align-self-center">
             <h1 className="text-center mb-3">Login</h1>
             <form className="form-signin forma">

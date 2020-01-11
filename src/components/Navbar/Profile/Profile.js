@@ -45,9 +45,8 @@ const Profile = props => {
             <div className="tab-pane fade show active align-items-center text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="card">
                 <div className="card-body profile-border">
-                  <h5 className="card-title">{full_name}</h5>
-                  <p className="card-text">{email}</p>
-                  <p className="card-text">{birthDay}</p>
+                  <h5 className="card-title">Full Name: {full_name}</h5>
+                  <p className="card-text">My Email: {email}</p>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#userUpdateForm">Edit</button>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#paymentForm">Add Payment</button>
                   <button type="button" className="btn btn-link" data-toggle="modal" data-target="#warningModal">Cancel Subcription</button>
