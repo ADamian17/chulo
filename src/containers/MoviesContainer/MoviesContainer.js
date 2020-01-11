@@ -51,7 +51,7 @@ class MoviesContainer extends Component {
 
   render() {
    const movieDetails = this.state.moviesData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
-   const genre = this.state.filteredData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
+  //  const genre = this.state.filteredData.map((movie, index) => <MovieCard movie={movie} key={index} currentUser={this.props.currentUser} />)
     return (
       <>
       <section className="jumbotron text-left mb-0 mt-5 hero">

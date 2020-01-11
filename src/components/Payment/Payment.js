@@ -17,7 +17,7 @@ const  Payment = props => {
   }
    
   // get last 4 dig
-     const paymentInf = props.profileData.payment;
+    const paymentInf = props.profileData.payment;
     let card = paymentInf.card_num.split("")
     let miNum = []; 
      for (let i = card.length -1; i >= 8; i--) {
