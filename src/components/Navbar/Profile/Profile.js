@@ -31,9 +31,9 @@ const Profile = props => {
         <li className="nav-item">
           <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a className="nav-link" id="payment-tab" data-toggle="tab" href="#payment" role="tab" aria-controls="payment" aria-selected="false">Payment</a>
-        </li>
+        </li> */}
       </ul>
       <div className="row mt-5 p-5">
         <div className="col-md-10 offset-md-1">
